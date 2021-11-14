@@ -44,9 +44,9 @@ THEN I am taken to the corresponding section of the README
 
 <https://github.com/Thorulfr/readme-generator>
 
-## Screenshot
+## Video Demonstration
 
-![Screenshot](./assets/images/readme-screenshot.png)
+[See this app in action.](https://github.com/Thorulfr/readme-generator)
 
 ## Contribution
 
