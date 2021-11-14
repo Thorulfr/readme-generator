@@ -4,10 +4,10 @@ const inquirer = require('inquirer');
 const questions = [
     {
         type: 'input',
-        name: 'name',
+        name: 'title',
         message: 'What is the title of your project?',
-        validate: (nameInput) => {
-            if (nameInput) {
+        validate: (titleInput) => {
+            if (titleInput) {
                 return true;
             } else {
                 console.log('Please enter the title of your project!');
@@ -17,7 +17,7 @@ const questions = [
     },
     {
         type: 'input',
-        title: 'description',
+        name: 'description',
         message:
             'Enter a brief description of your project. What does your project do? What inspired you to create it?',
         validate: (descriptionInput) => {
@@ -31,7 +31,7 @@ const questions = [
     },
     {
         type: 'input',
-        title: 'installation',
+        name: 'installation',
         message:
             'How do users install your project? Provide a step-by-step description of how to get your project up and running.',
         validate: (installationInput) => {
@@ -45,7 +45,7 @@ const questions = [
     },
     {
         type: 'input',
-        title: 'usage',
+        name: 'usage',
         message:
             'How are users meant to use your project? Provide instructions and examples.',
         validate: (usageInput) => {
@@ -59,7 +59,7 @@ const questions = [
     },
     {
         type: 'confirm',
-        title: 'confirmTests',
+        name: 'confirmTests',
         message: 'Did you write tests for your application?',
         default: false,
     },
@@ -90,7 +90,7 @@ const questions = [
     },
     {
         type: 'confirm',
-        title: 'confirmDeployed',
+        name: 'confirmDeployed',
         message: 'Is your project deployed?',
         default: false,
     },
@@ -151,6 +151,10 @@ function init() {
 }
 
 // Function call to initialize app
-init().catch((err) => {
-    console.log(err);
-});
+init()
+    .then((answers) => {
+        console.log(answers);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
