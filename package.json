@@ -1,30 +1,27 @@
 {
-  "name": "readme-generator",
-  "version": "1.0.0",
-  "description": "Dynamically generates a README file using the terminal.",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Thorulfr/readme-generator.git"
-  },
-  "keywords": [
-    "readme",
-    "generator",
-    "inquirer"
-  ],
-  "author": "Benjamin Holt",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/Thorulfr/readme-generator/issues"
-  },
-  "homepage": "https://github.com/Thorulfr/readme-generator#readme",
-  "dependencies": {
-    "inquirer": "^8.2.0"
-  },
-  "devDependencies": {
-    "jest": "^27.3.1"
-  }
+    "name": "readme-generator",
+    "version": "1.0.0",
+    "description": "Dynamically generates a README file using the terminal.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Thorulfr/readme-generator.git"
+    },
+    "keywords": [
+        "readme",
+        "generator",
+        "inquirer"
+    ],
+    "author": "Benjamin Holt",
+    "license": "GPL-3.0-or-later",
+    "bugs": {
+        "url": "https://github.com/Thorulfr/readme-generator/issues"
+    },
+    "homepage": "https://github.com/Thorulfr/readme-generator#readme",
+    "dependencies": {
+        "inquirer": "^8.2.0"
+    }
 }

@@ -48,6 +48,6 @@ THEN I am taken to the corresponding section of the README
 
 [See this app in action.](https://github.com/Thorulfr/readme-generator)
 
-## Contribution
+## Credits
 
 Initial skeleton provided (see initial commit). All other code by Benjamin Holt.
