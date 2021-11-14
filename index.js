@@ -4,10 +4,10 @@ const inquirer = require('inquirer');
 const questions = [
     {
         type: 'input',
-        name: 'title',
+        name: 'name',
         message: 'What is the title of your project?',
-        validate: (titleInput) => {
-            if (titleInput) {
+        validate: (nameInput) => {
+            if (nameInput) {
                 return true;
             } else {
                 console.log('Please enter the title of your project!');
@@ -146,7 +146,11 @@ const questions = [
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    return inquirer.prompt(questions);
+}
 
 // Function call to initialize app
-init();
+init().catch((err) => {
+    console.log(err);
+});
