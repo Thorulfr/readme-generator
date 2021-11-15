@@ -163,23 +163,6 @@ function init() {
     return inquirer.prompt(questions);
 }
 
-const mockData = {
-    title: 'Vacation Planner',
-    description: 'This app helps you plan your vacation.',
-    installation:
-        'Download X and unzip it to directory Y, then click the .exe file.',
-    usage: 'Enter your vacation dates and destination.',
-    confirmTests: true,
-    tests: 'Jest test 123 123',
-    github: 'dingdongdummyprofile',
-    confirmDeployed: true,
-    deployed: '7',
-    confirmContribute: true,
-    contribute: 'Contributor Covenant',
-    email: 'dingdongdummyemail@dingdongdummy.com',
-    license: 'Apache 2.0',
-};
-
 // init()
 //     .then((answers) => {
 //         console.log(answers);
@@ -194,6 +177,23 @@ const mockData = {
 //     .catch((err) => {
 //         console.log(err);
 //     });
+
+const mockData = {
+    title: 'Vacation Planner',
+    description: 'This app helps you plan your vacation.',
+    installation:
+        'Download X and unzip it to directory Y, then click the .exe file.',
+    usage: 'Enter your vacation dates and destination.',
+    confirmTests: true,
+    tests: 'Jest test 123 123',
+    github: 'dingdongdummyprofile',
+    confirmDeployed: true,
+    deployed: 'https://www.google.com/',
+    confirmContribute: true,
+    contribute: 'Contributor Covenant',
+    email: 'dingdongdummyemail@dingdongdummy.com',
+    license: 'Apache 2.0',
+};
 
 const markdown = generateMarkdown(mockData);
 writeToFile(markdown);
