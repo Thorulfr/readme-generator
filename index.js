@@ -1,6 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-// TODO: Create an array of questions for user input
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
+
 const questions = [
     {
         type: 'input',
@@ -142,19 +144,56 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(markdownContent) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/README.md', markdownContent, (err) => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve({
+                ok: true,
+                message: 'README created successfully.',
+            });
+        });
+    });
+}
 
-// TODO: Create a function to initialize app
 function init() {
     return inquirer.prompt(questions);
 }
 
-// Function call to initialize app
-init()
-    .then((answers) => {
-        console.log(answers);
-    })
-    .catch((err) => {
-        console.log(err);
-    });
+const mockData = {
+    title: 'Vacation Planner',
+    description: 'This app helps you plan your vacation.',
+    installation:
+        'Download X and unzip it to directory Y, then click the .exe file.',
+    usage: 'Enter your vacation dates and destination.',
+    confirmTests: true,
+    tests: 'Jest test 123 123',
+    github: 'dingdongdummyprofile',
+    confirmDeployed: true,
+    deployed: '7',
+    confirmContribute: true,
+    contribute: 'Contributor Covenant',
+    email: 'dingdongdummyemail@dingdongdummy.com',
+    license: 'Apache 2.0',
+};
+
+// init()
+//     .then((answers) => {
+//         console.log(answers);
+//         return answers;
+//     })
+//     .then((answers) => {
+//         return generateMarkdown(answers);
+//     })
+//     .then((markdown) => {
+//         return writeToFile(markdown);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     });
+
+const markdown = generateMarkdown(mockData);
+writeToFile(markdown);
