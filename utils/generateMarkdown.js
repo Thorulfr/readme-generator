@@ -1,3 +1,4 @@
+// Generate the image path for the license badge
 function generateLicenseBadge(license) {
     switch (license) {
         case 'Apache 2.0':
@@ -11,6 +12,7 @@ function generateLicenseBadge(license) {
     }
 }
 
+// Generate the link for the license itself
 function generateLicenseLink(license) {
     switch (license) {
         case 'Apache 2.0':
@@ -72,7 +74,6 @@ ${contributionInfo}
 };
 
 // Generate table of contents
-
 const generateTableOfContents = (data) => {
     let tests = '';
     let deployed = '';

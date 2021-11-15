@@ -1,8 +1,9 @@
-// TODO: Include packages needed for this application
+// Required packages
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
+// Array of questions to ask the user
 const questions = [
     {
         type: 'input',
@@ -120,6 +121,13 @@ const questions = [
         message:
             'Enter guidelines on how others can do so. If nothing is entered, Contributor Covenant guidelines will be selected.',
         default: 'Contributor Covenant',
+        when: ({ confirmContribute }) => {
+            if (confirmContribute) {
+                return true;
+            } else {
+                return false;
+            }
+        },
     },
     {
         type: 'input',
@@ -144,6 +152,7 @@ const questions = [
     },
 ];
 
+// Write the generated markdown to a README.md file in the dist folder
 function writeToFile(markdownContent) {
     return new Promise((resolve, reject) => {
         fs.writeFile('./dist/README.md', markdownContent, (err) => {
@@ -159,41 +168,23 @@ function writeToFile(markdownContent) {
     });
 }
 
+// Prompt the user for responses using the questions array above
 function init() {
     return inquirer.prompt(questions);
 }
 
-// init()
-//     .then((answers) => {
-//         console.log(answers);
-//         return answers;
-//     })
-//     .then((answers) => {
-//         return generateMarkdown(answers);
-//     })
-//     .then((markdown) => {
-//         return writeToFile(markdown);
-//     })
-//     .catch((err) => {
-//         console.log(err);
-//     });
-
-const mockData = {
-    title: 'Vacation Planner',
-    description: 'This app helps you plan your vacation.',
-    installation:
-        'Download X and unzip it to directory Y, then click the .exe file.',
-    usage: 'Enter your vacation dates and destination.',
-    confirmTests: true,
-    tests: 'Jest test 123 123',
-    github: 'dingdongdummyprofile',
-    confirmDeployed: true,
-    deployed: 'https://www.google.com/',
-    confirmContribute: true,
-    contribute: 'Contributor Covenant',
-    email: 'dingdongdummyemail@dingdongdummy.com',
-    license: 'Apache 2.0',
-};
-
-const markdown = generateMarkdown(mockData);
-writeToFile(markdown);
+// Run the prompt function, generate markdown using user's responses, then write to file
+init()
+    .then((answers) => {
+        console.log(answers);
+        return answers;
+    })
+    .then((answers) => {
+        return generateMarkdown(answers);
+    })
+    .then((markdown) => {
+        return writeToFile(markdown);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
