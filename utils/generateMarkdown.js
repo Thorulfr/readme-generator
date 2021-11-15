@@ -1,14 +1,28 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function generateLicenseBadge(license) {
+    switch (license) {
+        case 'Apache 2.0':
+            return './assets/images/license-Apache-2-blue.svg';
+        case 'GNU General Public License':
+            return './assets/images/license-GPL-blue.svg';
+        case 'MIT':
+            return './assets/images/license-MIT-blue.svg';
+        default:
+            return '';
+    }
+}
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function generateLicenseLink(license) {
+    switch (license) {
+        case 'Apache 2.0':
+            return 'https://opensource.org/licenses/Apache-2.0';
+        case 'GNU General Public License':
+            return 'https://opensource.org/licenses/gpl-license';
+        case 'MIT':
+            return 'https://opensource.org/licenses/MIT';
+        default:
+            return '';
+    }
+}
 
 // Generate Test Info section, if user indicates inclusion of tests
 const generateTests = (tests) => {
@@ -64,16 +78,13 @@ const generateTableOfContents = (data) => {
     let deployed = '';
     let contribution = '';
     if (data.confirmTests) {
-        tests = `
-* [Tests](<#tests>)`;
+        tests = `* [Tests](<#tests>)`;
     }
     if (data.confirmDeployed) {
-        deployed = `
-* [Deployment](<#deployment>)`;
+        deployed = `* [Deployment](<#deployment>)`;
     }
     if (data.confirmContribute) {
-        contribution = `
-* [Contribution](#contribution)`;
+        contribution = `* [Contribution](#contribution)`;
     }
     return `
 * [Description](#description)
@@ -90,6 +101,8 @@ ${contribution}
 // Generate the final markdown content
 function generateMarkdown(data) {
     return `# ${data.title}
+![License Badge](${generateLicenseBadge(data.license)})
+    
 ## Table of Contents
 ${generateTableOfContents(data)}
 
@@ -113,7 +126,10 @@ If you have any questions about this project, please contact me through [my GitH
 
 ## License
 
-${data.license}
+Usage of this application is governed by the [${
+        data.license
+    }](${generateLicenseLink(data.license)}) license.
+
 `;
 }
 

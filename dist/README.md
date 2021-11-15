@@ -1,14 +1,13 @@
 # Vacation Planner
+![License Badge](./assets/images/license-Apache-2-blue.svg)
+    
 ## Table of Contents
 
 * [Description](#description)
-
 * [Deployment](<#deployment>)
 * [Installation](#installation)
-
 * [Tests](<#tests>)
 * [Usage](#usage)
-
 * [Contribution](#contribution)
 * [Questions](#questions)
 * [License](#license)
@@ -46,4 +45,5 @@ If you have any questions about this project, please contact me through [my GitH
 
 ## License
 
-Apache 2.0
+Usage of this application is governed by the [Apache 2.0](https://opensource.org/licenses/Apache-2.0) license.
+

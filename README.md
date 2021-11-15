@@ -43,7 +43,7 @@ THEN I am taken to the corresponding section of the README
 
 <https://github.com/Thorulfr/readme-generator>
 
-## Video Demonstration
+## Demonstration
 
 [See this app in action.](https://github.com/Thorulfr/readme-generator)
 
