@@ -1,23 +1,23 @@
 # The Weather Dashboard
+
 ![License Badge](./assets/images/license-GPL-blue.svg)
-    
+
 ## Table of Contents
 
-* [Description](#description)
-* [Deployment](<#deployment>)
-* [Installation](#installation)
-* [Tests](<#tests>)
-* [Usage](#usage)
-* [Contribution](#contribution)
-* [Questions](#questions)
-* [License](#license)
-
+-   [Description](#description)
+-   [Deployment](#deployment)
+-   [Installation](#installation)
+-   [Tests](#tests)
+-   [Usage](#usage)
+-   [Contribution](#contribution)
+-   [Questions](#questions)
+-   [License](#license)
 
 ## Description
 
 This website provides a weather report for any given city a user searches for and lets them know if it's comfortable outside. It is an exercise in writing JavaScript that utilizes server-side APIs -- namely https://openweathermap.org/.
 
-## Deployment Link
+## Deployment
 
 A deployed version of this application can be found [here](https://thorulfr.github.io/weather-dashboard/).
 
@@ -46,4 +46,3 @@ If you have any questions about this project, please contact me through [my GitH
 ## License
 
 Usage of this application is governed by the [GNU General Public License](https://opensource.org/licenses/gpl-license) license.
-

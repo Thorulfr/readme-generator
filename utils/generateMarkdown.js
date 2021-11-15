@@ -46,7 +46,7 @@ const generateDeployedLink = (link) => {
         return '';
     }
     return `
-## Deployment Link
+## Deployment
 
 A deployed version of this application can be found [here](${link}).
 `;
