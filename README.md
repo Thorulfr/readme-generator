@@ -45,7 +45,7 @@ THEN I am taken to the corresponding section of the README
 
 ## Demonstration
 
-[See this app in action.](https://youtu.be/-zKkU8nx9YI)
+[See this app in action.](https://youtu.be/zMG2dOn2F5o)
 
 ## Credits
 
