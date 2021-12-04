@@ -2,7 +2,7 @@
 
 ## Description
 
-This application is inteded to dynamically generate high-quality README files that users can use for their GitHub repositories. It does so by using the Inquirer package to obtain user input via prompts in the command line.
+This application is intended to dynamically generate high-quality README files that users can use for their GitHub repositories. It does so by using the Inquirer package to obtain user input via prompts in the command line.
 
 In creating this application, I used the following user story and acceptance criteria:
 
